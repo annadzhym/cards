@@ -1,0 +1,80 @@
+body {
+  background: url("../img/1.jpg") no-repeat;
+  background-size: cover;
+}
+.cards {
+  margin: 0 2%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .red {
+    color: red;
+    font-family: 'Courgette', cursive;
+  }
+  .black {
+    color: black;
+    font-family: 'Lobster', cursive;
+  }
+}
+.flip {
+  transition: all 1s ease;
+  transform-style: preserve-3d;
+  width: 100px;
+  height: 150px;
+  padding: 3px;
+  border: 2px solid #f4b846;
+
+  .side {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+  }
+
+  .front {
+    & img {
+      height: inherit;
+      width: inherit;
+    }
+  }
+
+  .back {
+    background: white;
+    font-size: 20px;
+    transform: rotateY( 180deg );
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .suit {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 25px;
+    }
+    .suit2 {
+      transform: scale(-1, -1);
+    }
+
+    .turned {
+      transform: scale(1, -1);
+    }
+    .number2 {
+      transform: scale(-1, -1);
+    }
+    .ace {
+      font-size: 70px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &:hover {
+    transform: rotateY( 180deg );
+  }
+}
